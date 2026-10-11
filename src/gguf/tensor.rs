@@ -54,7 +54,7 @@ impl Tensors {
             Some(GgufValue::Uint32(a)) => *a as u64,
             _ => 32,
         };
-
+        // calculates the data offset by using bitwise and and bitwise not
         let data_offset = (current_position + alignment - 1) & !(alignment - 1);
 
         Ok(Self {

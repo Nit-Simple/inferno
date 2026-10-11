@@ -1,4 +1,5 @@
 pub mod header;
+pub mod model;
 pub mod tensor;
 pub mod value;
 use byteorder::{LittleEndian, ReadBytesExt};

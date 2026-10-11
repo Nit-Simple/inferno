@@ -1,7 +1,8 @@
 use std::fs::File;
 use std::io;
 
-use inferno_core::gguf::{GgufHeader, Tensors, load_metadata};
+use inferno_core::gguf::{GgufHeader, Tensors, load_metadata, model::Modelview};
+use memmap2::MmapOptions;
 
 fn main() -> io::Result<()> {
     let mut file = File::open("../gguf/model.gguf")?;
@@ -27,5 +28,12 @@ fn main() -> io::Result<()> {
         );
     }
     println!("{:?}", tensors.data_offset);
+
+    let start_offset = tensors.data_offset as usize + tensors.tensors[0].offset as usize;
+
+    let mmp_slice = unsafe { MmapOptions::new().map(&file).unwrap() };
+
+    let model_view = Modelview::new(&header, &tensors, &mdkv, start_offset, &mut &mmp_slice);
+
     Ok(())
 }

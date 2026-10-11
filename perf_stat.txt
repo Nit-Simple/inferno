@@ -1,0 +1,19 @@
+Magic: GGUF
+Format Version: 3
+Total Tensors (Weight matrices): 272
+Metadata Entries: 39
+
+Loaded 39 metadata entries.
+Loaded 272 tensors.
+Tensor: output_norm.weight                  | Shape: [576] | Type: 0 | Offset: 0
+Tensor: token_embd.weight                   | Shape: [576, 49152] | Type: 8 | Offset: 2304
+Tensor: blk.0.attn_k.weight                 | Shape: [576, 192] | Type: 6 | Offset: 30083328
+Tensor: blk.0.attn_norm.weight              | Shape: [576] | Type: 0 | Offset: 30159360
+Tensor: blk.0.attn_output.weight            | Shape: [576, 576] | Type: 6 | Offset: 30161664
+1786080
+
+
+
+real	0m0.188s
+user	0m0.064s
+sys	0m0.124s
