@@ -17,3 +17,11 @@ Tensor: blk.0.attn_output.weight            | Shape: [576, 576] | Type: 6 | Offs
 real	0m0.188s
 user	0m0.064s
 sys	0m0.124s
+
+
+
+//using mmap
+
+real	0m0.010s
+user	0m0.004s
+sys	0m0.006s
